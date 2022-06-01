@@ -4,29 +4,19 @@ restaurant history, dishes they often order, and restaurants their friends frequ
 """
 class User:
 
-    firstName, lastName = "", ""
-
-    #init function: takes a first and last name and sets them with the setFName and setLName functions
+    "init function: takes fname and lnames as arguments, sets first and last names"
     def __init__(self, fname, lname):
-        this.setFName(fname)
-        this.setLName(lname)
+        self.firstName = fname
+        self.lastName = lname
 
-    #sets the first name of the User
-    def setFName(self, fname):
-        firstName = fname
-
-    #sets the last name of the User
-    def setLName(self, lname):
-        lastName = lname
-
-    #returns the full name of the User
+    "returns the full name of the User"
     def getFullName(self):
         return getFName() + " " + getLName()
 
-    #returns the User's first name
+    "returns the User's first name"
     def getFName(self):
         return firstName
 
-    #returns the User's last name
+    "returns the User's last name"
     def getLName(self):
         return lastName
