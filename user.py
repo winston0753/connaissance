@@ -4,24 +4,23 @@ restaurant history, dishes they often order, and restaurants their friends frequ
 """
 class User:
 
-    "init function: takes fname and lnames as arguments, sets first and last names"
-    "takes five argument list, specifying the first five categories of restaurants that the user prefers"
+    """ Init function: takes fname and lnames as arguments, sets first and last names. """
+    """ Takes five argument list, specifying the first five categories of restaurants that the user prefers. """
     def __init__(self, fname, lname, five):
         self.firstName = fname
         self.lastName = lname
 
-        "create preferences object for user"
+        """ Create preferences object for user. """
         self.pref = Preferences(five)
 
-    "returns the full name of the User"
+    """ Returns the full name of the User. """
     def getFullName(self):
         return getFName() + " " + getLName()
 
-    "returns the User's first name"
+    """ Returns the User's first name. """
     def getFName(self):
         return firstName
 
-    "returns the User's last name"
-    #user last name
+    """ Returns the User's last name. """
     def getLName(self):
         return lastName
