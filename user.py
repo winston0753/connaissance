@@ -13,14 +13,24 @@ class User:
         """ Create preferences object for user. """
         self.pref = Preferences(five)
 
+        """ Create restaurant history of user, capping at last 100 restaurants. """
+        self.userHistory = []
+
+    """ Adds a restaurant to the user's history. If doing so exceeds history limit of 100 restaurants, remove oldest restaurant. """
+    def addRestaurantHistory(self, restaurant):
+        if len(self.userHistory) >= 100:
+            self.userHistory.pop(0)
+        self.userHistory.append(restaurant)
+
+    def getRestaurantHistory(self):
+        return self.userHistory
+
     """ Returns the full name of the User. """
     def getFullName(self):
         return getFName() + " " + getLName()
 
-    """ Returns the User's first name. """
     def getFName(self):
         return firstName
 
-    """ Returns the User's last name. """
     def getLName(self):
         return lastName
