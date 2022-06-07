@@ -1,3 +1,14 @@
+import json
+import requests
+
+"""" Taken from Yelp Fusion's documentation:
+All Yelp Fusion API endpoints are under https://api.yelp.com/v3. Below are Yelp Fusion's current endpoints. """"
+
+YELP_API = "https://api.yelp.com/v3"
+BUSINESS_SEARCH = "/businesses/search"
+BUSINESS_DETAILS = "/businesses/{id}"
+
+
 """ Main class that calls on user and preferences class. Does the overall functions finding restaurants
 based on preferences, location, and user history. """
 class Main:
