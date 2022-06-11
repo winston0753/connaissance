@@ -10,5 +10,4 @@ class Preferences:
 
     def addPreference(self, category):
         self.prefernces.append(category)
-
-    
+        

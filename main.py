@@ -6,7 +6,7 @@ All Yelp Fusion API endpoints are under https://api.yelp.com/v3. Below are Yelp 
 
 YELP_API = "https://api.yelp.com/v3"
 BUSINESS_SEARCH = "/businesses/search"
-BUSINESS_DETAILS = "/businesses/{id}"
+BUSINESS_DETAILS = "/businesses" # End with business ID to get specific business details
 
 
 """ Main class that calls on user and preferences class. Does the overall functions finding restaurants
@@ -16,17 +16,17 @@ class Main:
     """ Takes in user name and top five categories. Creates user. """
     def __init__(self, name, ffive):
 
-        nameList = name.split(" ")
-        user = User(nameList[0], nameList[1], ffive)
+        self.nameList = name.split(" ")
+        self.user = User(nameList[0], nameList[1], ffive)
 
 
 
     """ Returns a list of max 20 nearby restaurants in the area, according to user location. """
     def getRestaurants(self):
-        restaurants = [] """ *** Learn how to set an endpoint here. *** """
+        self.restaurants = [] """ *** Learn how to set an endpoint here. *** """
 
         """ Figure how to set endpoint to retrieve list of restaurants through Yelp API. """
-        return restaurants
+        return self.restaurants
 
     """ Asks the user what kind of cuisine they are feeling. Retrieves the user's restaurant history, and, using the recent
     trends in the user's eatery history, finds a restaurant also aligns with the user's 'preferred' subcategories. Algorithm
