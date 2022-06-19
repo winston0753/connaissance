@@ -5,9 +5,12 @@ import os
 """" Taken from Yelp Fusion's documentation:
 All Yelp Fusion API endpoints are under https://api.yelp.com/v3. Below are Yelp Fusion's current endpoints. """"
 
+
 YELP_API = "https://api.yelp.com/v3"
 BUSINESS_SEARCH = "/businesses/search"
 BUSINESS_DETAILS = "/businesses" # End with business ID to get specific business details
+
+GEOLOCATION_REQUEST = "https://www.googleapis.com/geolocation/v1/geolocate?key=" # Must end with Application API Key
 
 
 """ Main class that calls on user and preferences class. Does the overall functions finding restaurants
@@ -54,8 +57,17 @@ class Main:
         Otherwise, begin narrowing down restaurants of the given category to those that have at least 2 preferredSubs. If more
         than one restaurant option remain, continue filtering restaurants by increasing the number of subcategories required from
         preferredSubs set. """
+        userLocation = self.getLocation()
         nearestRestaurants = self.getRestaurants()
         numSubs = 2
         while nearestRestaurants:
             if " Has less than numSubs ":
                 nearestRestaurants.remove("restaurant")
+
+
+    """ Returns the current latitude and longitude of the user using the Geolocation API. """
+    def getLocation(self):
+
+        request = {} # Make POST request
+        response = request.json()
+        return response["location"]
