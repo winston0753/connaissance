@@ -65,7 +65,8 @@ class Main:
                 nearestRestaurants.remove("restaurant")
 
 
-    """ Returns the current latitude and longitude of the user using the Geolocation API. """
+    """ Returns the current latitude and longitude of the user using the Geolocation API. The GET request body must be of
+    JSON format. If request body is not provided, then defaults to using IP address of request location. """
     def getLocation(self):
 
         request = {} # Make POST request
