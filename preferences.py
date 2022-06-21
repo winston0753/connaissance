@@ -9,5 +9,5 @@ class Preferences:
         return self.preferences
 
     def addPreference(self, category):
+        """ If User has 10 Preferences, then randomly remove a preference from the set and append the new category. """
         self.prefernces.append(category)
-        

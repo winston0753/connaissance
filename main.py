@@ -57,7 +57,6 @@ class Main:
         Otherwise, begin narrowing down restaurants of the given category to those that have at least 2 preferredSubs. If more
         than one restaurant option remain, continue filtering restaurants by increasing the number of subcategories required from
         preferredSubs set. """
-        userLocation = self.getLocation()
         nearestRestaurants = self.getRestaurants()
         numSubs = 2
         while nearestRestaurants:
