@@ -2,6 +2,9 @@ import json
 import requests
 import os
 
+import user
+from user import User
+
 """" Taken from Yelp Fusion's documentation:
 All Yelp Fusion API endpoints are under https://api.yelp.com/v3. Below are Yelp Fusion's current endpoints. """"
 
@@ -22,7 +25,7 @@ class Main:
     def __init__(self, name, ffive):
 
         self.nameList = name.split(" ")
-        self.user = User(nameList[0], nameList[1], ffive)
+        self.user = User(self.nameList[0], self.nameList[1], ffive)
         self.userFile = open("userFile.txt", "w")
         self.userFile.write(user)
         self.userFile.close()
